@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+constant_width_bench
+variable_width_bench
+test
+gen_bytes
+
+# Env
+.vscode/
+
+# data
+*.bin
