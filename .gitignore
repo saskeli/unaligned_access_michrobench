@@ -28,7 +28,6 @@
 
 # Executables
 *.exe
-*.out
 *.app
 constant_width_bench
 variable_width_bench
@@ -40,3 +39,7 @@ gen_bytes
 
 # data
 *.bin
+
+# profiling data
+*.out
+*.out.*

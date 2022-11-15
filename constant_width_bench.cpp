@@ -58,6 +58,7 @@ int main(int argc, char const* argv[]) {
         std::cerr << "Read n bytes from file and run i operations\n\n"
                   << "Usage:\n"
                   << "  ./constant_width_branch n i in_file" << std::endl;
+        exit(1);
     }
     uint64_t n, i;
     std::string in_path(argv[3]);

@@ -2,7 +2,7 @@ CFLAGS = -std=c++2a -Wall -Wextra -Wshadow -pedantic -march=native
 
 HEADERS = include/constant_width_trad.hpp include/constant_width_wider.hpp
 
-.PHONY: clean
+.PHONY: clean profile
 
 .DEFAULT: all
 
@@ -17,7 +17,7 @@ constant_width_bench: constant_width_bench.cpp $(HEADERS)
 	g++ $(CFLAGS) -DNDEBUG -Ofast -o constant_width_bench constant_width_bench.cpp
 
 variable_width_bench: variable_width_bench.cpp $(HEADERS)
-	g++ $(CFLAGS) -DNDEBUG -Ofast -o variable_width_bench variable_width_bench.cpp
+	g++ $(CFLAGS) -Ofast -DNDEBUG -o variable_width_bench variable_width_bench.cpp
 
 test: test.cpp $(HEADERS)
 	g++ $(CFLAGS) -DNDEBUG -Ofast -o test test.cpp
@@ -25,3 +25,4 @@ test: test.cpp $(HEADERS)
 clean:
 	rm -f make_bwt
 	rm -f constant_width_bench
+	rm -f variable_width_bench
